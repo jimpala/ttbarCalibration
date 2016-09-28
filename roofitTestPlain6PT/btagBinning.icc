@@ -1,0 +1,46 @@
+  int nLimitsBtag=3;
+
+  double cutValue=0.8119;
+  if (tagPoint=="MV2c1085")
+  {
+    cutValue=0.1758475;
+  }
+  if (tagPoint=="MV2c1077")
+  {
+    cutValue=0.645925;
+  }
+  if (tagPoint=="MV2c1077_tracks")
+  {
+    cutValue=0.3706;
+  }
+  if (tagPoint=="MV2c1070_tracks")
+  {
+    cutValue=0.6455;
+  }
+  if (tagPoint=="MV2c1070")
+  {
+    cutValue=0.8244273;
+  }
+  if (tagPoint=="MV2c1060")
+  {
+    cutValue=0.934906;
+  }
+  if (tagPoint=="MV2c1050")
+  {
+    cutValue=0.9769329;
+  }
+  if (tagPoint=="MV2c1030")
+  {
+    cutValue=0.9977155;
+  }
+
+// cutValue = (cutValue + 1)/2;
+
+  Double_t limitsBWeight[20]={-1.,cutValue,1};
+// int nLimitsBtag=9;
+//Double_t limitsBWeight[20]={0,0.148,0.596,0.795,1};
+//Double_t limitsBWeight[20]={0,0.0616,0.1644,0.39,0.8119,0.9867,0.992515446,0.992665769,1};
+
+//int nLimitsBtag=11;
+//Double_t limitsBWeight[20]={0,0.07,0.1,0.13,0.16,0.2,0.4,0.6,0.8119,0.9867,1};
+//90,85,80,70,60,50,40

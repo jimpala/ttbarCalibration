@@ -1,0 +1,6 @@
+float bdt_cut = 0.1;
+if(channel>1) bdt_cut = 0.1;
+float low_bdt_cut = -6;
+//float low_bdt_cut = -0.6;
+if(channel==2) low_bdt_cut = -10.0;
+if(channel==3) low_bdt_cut = -10.;

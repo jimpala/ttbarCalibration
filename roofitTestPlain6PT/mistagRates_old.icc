@@ -1,0 +1,80 @@
+    double mistagBin[7] = {1., 1. , 1., 1., 1., 1., 1.};	
+     double mistagBinErr[7]={2.4092, 0.3724, 0.3297, 0.3297, 0.3481, 0.3481, 0.5109};	
+
+
+  if (tagPoint=="MV2c2085")
+  {
+     mistagBin[0] = 1.24317;
+     mistagBin[1] = 1.28747;
+     mistagBin[2] = 1.23587;
+     mistagBin[3] = 1.23587;
+     mistagBin[4] = 1.30538;
+     mistagBin[5] = 1.30538;
+     mistagBin[6] = 1.35248;
+
+     mistagBinErr[0] = 0.532517;
+     mistagBinErr[1] = 0.531361;
+     mistagBinErr[2] = 0.535131;
+     mistagBinErr[3] = 0.535131;
+     mistagBinErr[4] = 0.582885;
+     mistagBinErr[5] = 0.582885;
+     mistagBinErr[6] = 0.664784;
+  }
+
+  if (tagPoint=="MV2c2077")
+  {
+     mistagBin[0] = 1.42846;
+     mistagBin[1] = 1.48195;
+     mistagBin[2] = 1.36364;
+     mistagBin[3] = 1.36364;
+     mistagBin[4] = 1.45345;
+     mistagBin[5] = 1.45345;
+     mistagBin[6] = 1.45896;
+
+     mistagBinErr[0] = 0.664879;
+     mistagBinErr[1] = 0.640237;
+     mistagBinErr[2] = 0.615911;
+     mistagBinErr[3] = 0.615911;
+     mistagBinErr[4] = 0.662438;
+     mistagBinErr[5] = 0.662438;
+     mistagBinErr[6] = 0.741354;
+  }
+
+  if (tagPoint=="MV2c2070")
+  {
+     mistagBin[0] = 1.29327;
+     mistagBin[1] = 1.5975;
+     mistagBin[2] = 1.41605;
+     mistagBin[3] = 1.41605;
+     mistagBin[4] = 1.38895;
+     mistagBin[5] = 1.38895;
+     mistagBin[6] = 1.37145;
+
+     mistagBinErr[0] = 0.795445;
+     mistagBinErr[1] = 0.775523;
+     mistagBinErr[2] = 0.651384;
+     mistagBinErr[3] = 0.651384;
+     mistagBinErr[4] = 0.634173;
+     mistagBinErr[5] = 0.634173;
+     mistagBinErr[6] = 0.656042;
+  }
+
+  if (tagPoint=="MV2c2060")
+  {
+     mistagBin[0] = 2.54961;
+     mistagBin[1] = 1.63568;
+     mistagBin[2] = 1.38837;
+     mistagBin[3] = 1.38837;
+     mistagBin[4] = 1.30622;
+     mistagBin[5] = 1.30622;
+     mistagBin[6] =  1.27968;
+
+     mistagBinErr[0] = 1.77244;
+     mistagBinErr[1] = 0.994545;
+     mistagBinErr[2] = 0.627253;
+     mistagBinErr[3] = 0.627253;
+     mistagBinErr[4] = 0.629354;
+     mistagBinErr[5] = 0.629354;
+     mistagBinErr[6] = 0.63999;
+  }
+

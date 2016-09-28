@@ -1,0 +1,445 @@
+std::pair<double,double> getCentralPTETA(int category,int nBins=11)
+{
+  if (nBins==1)
+  {
+    return std::pair<double,double>(50e3,0.8);
+  }
+
+//  assert(nBins==22 || nBins==11 || nBins==14 || nBins==3 || nBins==5 || nBins==15 || nBins==17 || nBins==13);
+  assert( nBins==15 );
+  
+  if (category==0)
+  {
+    return std::pair<double,double>(25e3,1.);
+  }
+  else if (category==1)
+  {
+    return std::pair<double,double>(45e3,0.35);
+  }
+  else if (category==2)
+  {
+    return std::pair<double,double>(45e3,1.0);
+  }
+  else if (category==3)
+  {
+    return std::pair<double,double>(45e3,2.0);
+  }
+  else if (category==4)
+  {
+    return std::pair<double,double>(75e3,0.35);
+  }
+  else if (category==5)
+  {
+    return std::pair<double,double>(75e3,1.0);
+  }
+  else if (category==6)
+  {
+    return std::pair<double,double>(75e3,2.0);
+  }
+  else if (category==7)
+  {
+    return std::pair<double,double>(115e3,0.35);
+  }
+  else if (category==8)
+  {
+    return std::pair<double,double>(115e3,1.0);
+  }
+  else if (category==9)
+  {
+    return std::pair<double,double>(115e3,2.0);
+  }
+  else if (category==10)
+  {
+    return std::pair<double,double>(170e3,0.35);
+  }
+  else if (category==11)
+  {
+    return std::pair<double,double>(170e3,1.0);
+  }
+  else if (category==12)
+  {
+    return std::pair<double,double>(170e3,2.0);
+  }
+  else if (category==13)
+  {
+    return std::pair<double,double>(250e3,1.0);
+  }
+  else if (category==14)
+  {
+    return std::pair<double,double>(350e3,1.0);
+  }
+  std::cout << " Couldn't find category..." << endl;
+}
+
+int getCategory(double pT,double eta,int nBins=11)
+{
+
+//20-30,30-60,60-90,90-120,120-160,160-200,>200,>300
+//  |eta|<1.2,|eta|>=1.2
+
+  if (nBins==1)
+  {
+    return 0;
+  }
+
+  assert(nBins==22 || nBins==11 || nBins==14 || nBins==3 || nBins==5 || nBins==15 || nBins==17 || nBins==13 || nBins==7);
+  
+  int cat=0;
+
+#include "tracks.icc"
+  
+  //20-30
+  //30-60 3
+  //60-90 3
+  //90-140 3
+  //140-200 3
+  //>200020
+  if (nBins==7&&tracks)
+  {
+    if (pT>=10e3 && pT<20e3)
+    {
+      cat=0;
+    }
+    else if (pT>=20e3 &&  pT<30e3)
+    {
+      cat=1;
+    }
+    else if (pT>=30e3 && pT<60e3)
+    {
+      cat=2;
+    }
+    else if (pT>=60e3 && pT<100e3)
+    {
+      cat=3;
+    }
+    else if (pT>=100e3 && pT<250e3)
+    {
+      cat=4;
+    }
+    else if (pT>=250e3 && pT<300e3)
+    {
+      cat=5;
+    }
+    else if (pT>=300e3)
+    {
+      cat=6;
+    }
+    else 
+    {
+      cout << " ERROR " << pT << endl;
+      throw;
+    }
+    return cat;
+  }
+
+  else if (nBins==7)
+  {
+    if (pT>=10e3 && pT<30e3)
+    {
+      cat=0;
+    }
+    else if (pT>=30e3 &&  pT<60e3)
+    {
+      cat=1;
+    }
+    else if (pT>=60e3 && pT<90e3)
+    {
+      cat=2;
+    }
+    else if (pT>=90e3 && pT<140e3)
+    {
+      cat=3;
+    }
+    else if (pT>=140e3 && pT<200e3)
+    {
+      cat=4;
+    }
+    else if (pT>=200e3 && pT<300e3)
+    {
+      cat=5;
+    }
+    else if (pT>=300e3)
+    {
+      cat=6;
+    }
+    else 
+    {
+      cout << " ERROR " << pT << endl;
+      throw;
+    }
+    
+    return cat;
+  }
+  else if (nBins==17)
+  {
+    if (pT>=20e3 && pT<30e3)
+    {
+      cat=0;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }
+    }
+    else if (pT>=30e3 &&  pT<60e3)
+    {
+      cat=3;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }
+        
+    }
+    else if (pT>60e3 && pT<90e3)
+    {
+      cat=6;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }      
+    }
+    else if (pT>=90e3 && pT<140e3)
+    {
+      cat=9;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }      
+    }
+    else if (pT>=140e3 && pT<200e3)
+    {
+      cat=12;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      } 
+    }
+    else if (pT>=200e3 && pT<300e3)
+    {
+      cat=15;
+    }
+    else if (pT>300e3)
+    {
+      cat=16;
+    }
+    else 
+    {
+      cout << " ERROR " << pT << endl;
+      throw;
+    }
+    
+    return cat;
+  } 
+  else if (nBins==15)
+  {
+    if (pT>=20e3 && pT<30e3)
+    {
+      cat=0;
+    }
+    else if (pT>=30e3 &&  pT<60e3)
+    {
+      cat=1;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }
+        
+    }
+    else if (pT>=60e3 && pT<90e3)
+    {
+      cat=4;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }      
+    }
+    else if (pT>=90e3 && pT<140e3)
+    {
+      cat=7;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      }      
+    }
+    else if (pT>=140e3 && pT<200e3)
+    {
+      cat=10;
+      if (fabs(eta)>1.5)
+      {
+        cat+=2;
+      }
+      else if (fabs(eta)>0.7)
+      {
+        cat+=1;
+      } 
+    }
+    else if (pT>=200e3 && pT<300e3)
+    {
+      cat=13;
+    }
+    else if (pT>=300e3)
+    {
+      cat=14;
+    }
+    else 
+    {
+      cout << " ERROR " << pT << endl;
+      throw;
+    }
+    
+    return cat;
+  } 
+  else if (nBins==3)
+  {
+    if (fabs(eta)>1.5)
+    {
+      cat=2;
+    }
+    else if (fabs(eta)>0.7)
+    {
+      cat=1;
+    }
+    else 
+    {
+      cat=0;
+    }
+    return cat;
+  }
+  else if (nBins==5)
+  {
+    for (unsigned int i=0;i<5;i++)
+    {
+      double min=0.5*i;
+      double max=0.5*(i+1);
+      if (fabs(eta)>=min && fabs(eta)<max)
+      {
+        cat=i;
+        break;
+      }
+    }
+    return cat;
+  }    
+  else if (nBins==22||nBins==11)
+  {
+    
+    if (pT>300e3)
+    {
+      cat=10;
+    }
+    else if (pT>200e3)
+    {
+      cat=9;
+    }
+    else if (pT>140e3)
+    {
+      cat=8;
+    }
+    else if (pT>110e3)
+    {
+      cat=7;
+    }
+    else if (pT>90e3)
+    {
+      cat=6;
+    }
+    else if (pT>75e3)
+    {
+      cat=5;
+    }
+    else if (pT>60e3)
+    {
+      cat=4;
+    }
+    else if (pT>50e3)
+    {
+      cat=3;
+    }
+    else if (pT>40e3)
+    {
+      cat=2;
+    }
+    else if (pT>30e3)
+    {
+      cat=1;
+    }
+    
+    if (fabs(eta)>1. && nBins==22)
+    {
+      cat+=11;
+    }
+    return cat;
+  }
+  else
+  {
+    if (pT>300e3)
+    {
+      cat=13;
+    }
+    else if (pT>200e3)
+    {
+      cat=11;
+    }
+    else if (pT>160e3)
+    {
+      cat=9;
+    }
+    else if (pT>120e3)
+    {
+      cat=7;
+    }
+    else if (pT>90e3)
+    {
+      cat=5;
+    }
+    else if (pT>60e3)
+    {
+      cat=3;
+    }
+    else if (pT>30e3)
+    {
+      cat=1;
+    }
+    else
+    {
+      cat=0;
+    }
+    if (fabs(eta)>1.)
+    {
+      cat+=1;
+    }
+    return cat;
+  }
+  cout << " Didn't recognize n of bins " << nBins << endl;
+  return -1;
+}

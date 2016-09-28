@@ -1,0 +1,11 @@
+*.root
+*.tex
+*.xml
+*.svn-base
+*.txt
+*.d
+*.so
+*.o
+*~
+*.eps
+*entries
