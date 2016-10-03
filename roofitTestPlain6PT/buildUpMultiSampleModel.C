@@ -1,3 +1,5 @@
+// Referenced in DoGeneralFit.C
+
 #include "RooRealVar.h"
 #include "RooArgList.h"
 #include "TMatrixTSym.h"
@@ -40,8 +42,8 @@ RooAbsPdf* buildUpMultiSampleModel(TString tagPoint,int channel,int nCombination
   bool optimisation=false;
 
   //INCLUDE FIX COMBINATIONS
-#include "./../../ntupProduction/fixCombinations.icc"
-#include "./../../ntupProduction/fixCombinationsThree.icc"
+#include "/unix/atlasvhbb/abell/mc15data7/ntupProduction/fixCombinations.icc"
+#include "/unix/atlasvhbb/abell/mc15data7/ntupProduction/fixCombinationsThree.icc"
 
   bool tracks = (tagPoint.Index("tracks")!=-1);
   double ptmin=20e3;
@@ -574,7 +576,7 @@ RooAbsPdf* buildUpMultiSampleModel(TString tagPoint,int channel,int nCombination
   {
     
     TString directory;
-    directory = (tracks) ? "./../../PGS_tracks/outputGeneral_fit_" : "./../../PGS/outputGeneral_fit_";
+    directory = (tracks) ? "/unix/atlasvhbb/abell/mc15data7/PGS_tracks/outputGeneral_fit_" : "/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_";
 //    directory = (tracks) ? "./../../PGS_tracks/outputGeneral_fit_" : "/unix/atlas4/abell/FirstxAOD/abell/ttbarPDFCalibration/mc15data5/PGS/outputGeneral_fit_";
     directory+=sampleTypes.at(u);
     if (systematicsToLoad!="" && !systematicsToLoad.Contains("ttBB"))//for ttHF use std One
@@ -1280,7 +1282,7 @@ RooAbsPdf* buildUpMultiSampleModel(TString tagPoint,int channel,int nCombination
   for (int e=0;e<samples.size();e++)
   {
     TString directoryToUse;
-//    directoryToUse = (tracks) ? "./../../PGS_tracks/" : "/unix/atlas4/abell/FirstxAOD/abell/ttbarPDFCalibration/mc15data5/PGS/";
+//    directoryToUse = (tracks) ? "/unix/atlasvhbb/abell/mc15data7/PGS_tracks/" : "/unix/atlas4/abell/FirstxAOD/abell/ttbarPDFCalibration/mc15data5/PGS/";
     directoryToUse = (tracks) ? "./../../PGS_tracks/" : "./../../PGS/";
 
     directoryToUse+=samples.at(e);

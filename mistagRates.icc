@@ -1,0 +1,523 @@
+    double mistagBin[7] = {1., 1. , 1., 1., 1., 1., 1.};
+     double mistagBinErr[7]={2.4092, 0.3724, 0.3297, 0.3297, 0.3481, 0.3481, 0.5109};
+     double mistagBinErr_c[7]={2.4092, 0.3724, 0.3297, 0.3297, 0.3481, 0.3481, 0.5109};
+// c_fraction: 0.0564474 l_fraction 0.943553
+if(tagPoint=="MV2c2060" && channel==0)
+{
+  mistagBin[0] = 2.46491;
+  mistagBin[1] = 1.59806;
+  mistagBin[2] = 1.36913;
+  mistagBin[3] = 1.36913;
+  mistagBin[4] = 1.29155;
+  mistagBin[5] = 1.29155;
+  mistagBin[6] = 1.27968;
+
+  mistagBinErr[0] = 1.67239;
+  mistagBinErr_c[0] = 0.0156522;
+  mistagBinErr[1] = 0.938406;
+  mistagBinErr_c[1] = 0.010171;
+  mistagBinErr[2] = 0.591846;
+  mistagBinErr_c[2] = 0.011277;
+  mistagBinErr[3] = 0.591846;
+  mistagBinErr_c[3] = 0.011277;
+  mistagBinErr[4] = 0.593829;
+  mistagBinErr_c[4] = 0.0227403;
+  mistagBinErr[5] = 0.593829;
+  mistagBinErr_c[5] = 0.0227403;
+  mistagBinErr[6] = 0.63999;
+  mistagBinErr_c[6] = 0.402858;
+}
+// c_fraction: 0.0439384 l_fraction 0.956062
+if(tagPoint=="MV2c2060" && channel==1)
+{
+  mistagBin[0] = 2.48368;
+  mistagBin[1] = 1.6064;
+  mistagBin[2] = 1.3734;
+  mistagBin[3] = 1.3734;
+  mistagBin[4] = 1.2948;
+  mistagBin[5] = 1.2948;
+  mistagBin[6] = 1.27968;
+
+  mistagBinErr[0] = 1.69456;
+  mistagBinErr_c[0] = 0.0121836;
+  mistagBinErr[1] = 0.950846;
+  mistagBinErr_c[1] = 0.00791708;
+  mistagBinErr[2] = 0.599693;
+  mistagBinErr_c[2] = 0.00877797;
+  mistagBinErr[3] = 0.599693;
+  mistagBinErr_c[3] = 0.00877797;
+  mistagBinErr[4] = 0.601701;
+  mistagBinErr_c[4] = 0.0177009;
+  mistagBinErr[5] = 0.601701;
+  mistagBinErr_c[5] = 0.0177009;
+  mistagBinErr[6] = 0.63999;
+  mistagBinErr_c[6] = 0.402858;
+}
+// c_fraction: 0.0522282 l_fraction 0.947772
+if(tagPoint=="MV2c2060" && channel==2)
+{
+  mistagBin[0] = 2.46943;
+  mistagBin[1] = 1.60023;
+  mistagBin[2] = 1.3686;
+  mistagBin[3] = 1.3686;
+  mistagBin[4] = 1.2911;
+  mistagBin[5] = 1.2911;
+  mistagBin[6] = 1.27968;
+
+  mistagBinErr[0] = 1.67987;
+  mistagBinErr_c[0] = 0.0140103;
+  mistagBinErr[1] = 0.942602;
+  mistagBinErr_c[1] = 0.00982883;
+  mistagBinErr[2] = 0.594493;
+  mistagBinErr_c[2] = 0.0106238;
+  mistagBinErr[3] = 0.594493;
+  mistagBinErr_c[3] = 0.0106238;
+  mistagBinErr[4] = 0.596484;
+  mistagBinErr_c[4] = 0.0211035;
+  mistagBinErr[5] = 0.596484;
+  mistagBinErr_c[5] = 0.0211035;
+  mistagBinErr[6] = 0.63999;
+  mistagBinErr_c[6] = 0.404063;
+}
+// c_fraction: 0.0556068 l_fraction 0.944393
+if(tagPoint=="MV2c2060" && channel==3)
+{
+  mistagBin[0] = 2.46424;
+  mistagBin[1] = 1.59794;
+  mistagBin[2] = 1.36732;
+  mistagBin[3] = 1.36732;
+  mistagBin[4] = 1.29012;
+  mistagBin[5] = 1.29012;
+  mistagBin[6] = 1.27968;
+
+  mistagBinErr[0] = 1.67388;
+  mistagBinErr_c[0] = 0.0149166;
+  mistagBinErr[1] = 0.939242;
+  mistagBinErr_c[1] = 0.0104646;
+  mistagBinErr[2] = 0.592373;
+  mistagBinErr_c[2] = 0.0113111;
+  mistagBinErr[3] = 0.592373;
+  mistagBinErr_c[3] = 0.0113111;
+  mistagBinErr[4] = 0.594358;
+  mistagBinErr_c[4] = 0.0224686;
+  mistagBinErr[5] = 0.594358;
+  mistagBinErr_c[5] = 0.0224686;
+  mistagBinErr[6] = 0.63999;
+  mistagBinErr_c[6] = 0.404063;
+}
+// c_fraction: 0.0564474 l_fraction 0.943553
+if(tagPoint=="MV2c2070" && channel==0)
+{
+  mistagBin[0] = 1.27781;
+  mistagBin[1] = 1.56015;
+  mistagBin[2] = 1.38963;
+  mistagBin[3] = 1.38963;
+  mistagBin[4] = 1.36421;
+  mistagBin[5] = 1.36421;
+  mistagBin[6] = 1.37145;
+
+  mistagBinErr[0] = 0.750544;
+  mistagBinErr_c[0] = 0.0094472;
+  mistagBinErr[1] = 0.731747;
+  mistagBinErr_c[1] = 0.00707934;
+  mistagBinErr[2] = 0.614615;
+  mistagBinErr_c[2] = 0.00795891;
+  mistagBinErr[3] = 0.614615;
+  mistagBinErr_c[3] = 0.00795891;
+  mistagBinErr[4] = 0.598376;
+  mistagBinErr_c[4] = 0.011862;
+  mistagBinErr[5] = 0.598376;
+  mistagBinErr_c[5] = 0.011862;
+  mistagBinErr[6] = 0.656042;
+  mistagBinErr_c[6] = 0.210142;
+}
+// c_fraction: 0.0439384 l_fraction 0.956062
+if(tagPoint=="MV2c2070" && channel==1)
+{
+  mistagBin[0] = 1.28124;
+  mistagBin[1] = 1.56843;
+  mistagBin[2] = 1.39548;
+  mistagBin[3] = 1.39548;
+  mistagBin[4] = 1.36969;
+  mistagBin[5] = 1.36969;
+  mistagBin[6] = 1.37145;
+
+  mistagBinErr[0] = 0.760494;
+  mistagBinErr_c[0] = 0.00735366;
+  mistagBinErr[1] = 0.741448;
+  mistagBinErr_c[1] = 0.00551053;
+  mistagBinErr[2] = 0.622763;
+  mistagBinErr_c[2] = 0.00619518;
+  mistagBinErr[3] = 0.622763;
+  mistagBinErr_c[3] = 0.00619518;
+  mistagBinErr[4] = 0.606308;
+  mistagBinErr_c[4] = 0.0092333;
+  mistagBinErr[5] = 0.606308;
+  mistagBinErr_c[5] = 0.0092333;
+  mistagBinErr[6] = 0.656042;
+  mistagBinErr_c[6] = 0.210142;
+}
+// c_fraction: 0.0522282 l_fraction 0.947772
+if(tagPoint=="MV2c2070" && channel==2)
+{
+  mistagBin[0] = 1.27913;
+  mistagBin[1] = 1.56266;
+  mistagBin[2] = 1.39073;
+  mistagBin[3] = 1.39073;
+  mistagBin[4] = 1.36536;
+  mistagBin[5] = 1.36536;
+  mistagBin[6] = 1.37145;
+
+  mistagBinErr[0] = 0.7539;
+  mistagBinErr_c[0] = 0.00852787;
+  mistagBinErr[1] = 0.735019;
+  mistagBinErr_c[1] = 0.00667899;
+  mistagBinErr[2] = 0.617363;
+  mistagBinErr_c[2] = 0.00749339;
+  mistagBinErr[3] = 0.617363;
+  mistagBinErr_c[3] = 0.00749339;
+  mistagBinErr[4] = 0.601051;
+  mistagBinErr_c[4] = 0.0110301;
+  mistagBinErr[5] = 0.601051;
+  mistagBinErr_c[5] = 0.0110301;
+  mistagBinErr[6] = 0.656042;
+  mistagBinErr_c[6] = 0.21119;
+}
+// c_fraction: 0.0556068 l_fraction 0.944393
+if(tagPoint=="MV2c2070" && channel==3)
+{
+  mistagBin[0] = 1.27822;
+  mistagBin[1] = 1.5604;
+  mistagBin[2] = 1.38909;
+  mistagBin[3] = 1.38909;
+  mistagBin[4] = 1.36383;
+  mistagBin[5] = 1.36383;
+  mistagBin[6] = 1.37145;
+
+  mistagBinErr[0] = 0.751213;
+  mistagBinErr_c[0] = 0.00907953;
+  mistagBinErr[1] = 0.732399;
+  mistagBinErr_c[1] = 0.00711105;
+  mistagBinErr[2] = 0.615163;
+  mistagBinErr_c[2] = 0.00797812;
+  mistagBinErr[3] = 0.615163;
+  mistagBinErr_c[3] = 0.00797812;
+  mistagBinErr[4] = 0.598909;
+  mistagBinErr_c[4] = 0.0117436;
+  mistagBinErr[5] = 0.598909;
+  mistagBinErr_c[5] = 0.0117436;
+  mistagBinErr[6] = 0.656042;
+  mistagBinErr_c[6] = 0.21119;
+}
+// c_fraction: 0.0564474 l_fraction 0.943553
+if(tagPoint=="MV2c2077" && channel==0)
+{
+  mistagBin[0] = 1.40689;
+  mistagBin[1] = 1.4502;
+  mistagBin[2] = 1.33591;
+  mistagBin[3] = 1.33591;
+  mistagBin[4] = 1.42227;
+  mistagBin[5] = 1.42227;
+  mistagBin[6] = 1.45896;
+
+  mistagBinErr[0] = 0.627348;
+  mistagBinErr_c[0] = 0.00846095;
+  mistagBinErr[1] = 0.604097;
+  mistagBinErr_c[1] = 0.00640565;
+  mistagBinErr[2] = 0.581144;
+  mistagBinErr_c[2] = 0.00636647;
+  mistagBinErr[3] = 0.581144;
+  mistagBinErr_c[3] = 0.00636647;
+  mistagBinErr[4] = 0.625045;
+  mistagBinErr_c[4] = 0.00790923;
+  mistagBinErr[5] = 0.625045;
+  mistagBinErr_c[5] = 0.00790923;
+  mistagBinErr[6] = 0.741354;
+  mistagBinErr_c[6] = 0.140117;
+}
+// c_fraction: 0.0439384 l_fraction 0.956062
+if(tagPoint=="MV2c2077" && channel==1)
+{
+  mistagBin[0] = 1.41167;
+  mistagBin[1] = 1.45724;
+  mistagBin[2] = 1.34205;
+  mistagBin[3] = 1.34205;
+  mistagBin[4] = 1.42918;
+  mistagBin[5] = 1.42918;
+  mistagBin[6] = 1.45896;
+
+  mistagBinErr[0] = 0.635665;
+  mistagBinErr_c[0] = 0.00658597;
+  mistagBinErr[1] = 0.612106;
+  mistagBinErr_c[1] = 0.00498613;
+  mistagBinErr[2] = 0.588849;
+  mistagBinErr_c[2] = 0.00495563;
+  mistagBinErr[3] = 0.588849;
+  mistagBinErr_c[3] = 0.00495563;
+  mistagBinErr[4] = 0.633332;
+  mistagBinErr_c[4] = 0.00615651;
+  mistagBinErr[5] = 0.633332;
+  mistagBinErr_c[5] = 0.00615651;
+  mistagBinErr[6] = 0.741354;
+  mistagBinErr_c[6] = 0.140117;
+}
+// c_fraction: 0.0522282 l_fraction 0.947772
+if(tagPoint=="MV2c2077" && channel==2)
+{
+  mistagBin[0] = 1.40828;
+  mistagBin[1] = 1.45236;
+  mistagBin[2] = 1.33754;
+  mistagBin[3] = 1.33754;
+  mistagBin[4] = 1.42426;
+  mistagBin[5] = 1.42426;
+  mistagBin[6] = 1.45896;
+
+  mistagBinErr[0] = 0.630154;
+  mistagBinErr_c[0] = 0.00778545;
+  mistagBinErr[1] = 0.606799;
+  mistagBinErr_c[1] = 0.00605335;
+  mistagBinErr[2] = 0.583743;
+  mistagBinErr_c[2] = 0.00598869;
+  mistagBinErr[3] = 0.583743;
+  mistagBinErr_c[3] = 0.00598869;
+  mistagBinErr[4] = 0.62784;
+  mistagBinErr_c[4] = 0.00734584;
+  mistagBinErr[5] = 0.62784;
+  mistagBinErr_c[5] = 0.00734584;
+  mistagBinErr[6] = 0.741354;
+  mistagBinErr_c[6] = 0.140649;
+}
+// c_fraction: 0.0556068 l_fraction 0.944393
+if(tagPoint=="MV2c2077" && channel==3)
+{
+  mistagBin[0] = 1.40698;
+  mistagBin[1] = 1.45045;
+  mistagBin[2] = 1.33586;
+  mistagBin[3] = 1.33586;
+  mistagBin[4] = 1.42237;
+  mistagBin[5] = 1.42237;
+  mistagBin[6] = 1.45896;
+
+  mistagBinErr[0] = 0.627907;
+  mistagBinErr_c[0] = 0.00828908;
+  mistagBinErr[1] = 0.604635;
+  mistagBinErr_c[1] = 0.00644493;
+  mistagBinErr[2] = 0.581662;
+  mistagBinErr_c[2] = 0.00637609;
+  mistagBinErr[3] = 0.581662;
+  mistagBinErr_c[3] = 0.00637609;
+  mistagBinErr[4] = 0.625602;
+  mistagBinErr_c[4] = 0.00782104;
+  mistagBinErr[5] = 0.625602;
+  mistagBinErr_c[5] = 0.00782104;
+  mistagBinErr[6] = 0.741354;
+  mistagBinErr_c[6] = 0.140649;
+}
+// c_fraction: 0.0564474 l_fraction 0.943553
+if(tagPoint=="MV2c2085" && channel==0)
+{
+  mistagBin[0] = 1.22889;
+  mistagBin[1] = 1.26607;
+  mistagBin[2] = 1.21502;
+  mistagBin[3] = 1.21502;
+  mistagBin[4] = 1.28506;
+  mistagBin[5] = 1.28506;
+  mistagBin[6] = 1.35248;
+
+  mistagBinErr[0] = 0.502458;
+  mistagBinErr_c[0] = 0.00692253;
+  mistagBinErr[1] = 0.501367;
+  mistagBinErr_c[1] = 0.00600143;
+  mistagBinErr[2] = 0.504924;
+  mistagBinErr_c[2] = 0.00585094;
+  mistagBinErr[3] = 0.504924;
+  mistagBinErr_c[3] = 0.00585094;
+  mistagBinErr[4] = 0.549983;
+  mistagBinErr_c[4] = 0.00691333;
+  mistagBinErr[5] = 0.549983;
+  mistagBinErr_c[5] = 0.00691333;
+  mistagBinErr[6] = 0.664784;
+  mistagBinErr_c[6] = 0.122474;
+}
+// c_fraction: 0.0439384 l_fraction 0.956062
+if(tagPoint=="MV2c2085" && channel==1)
+{
+  mistagBin[0] = 1.23205;
+  mistagBin[1] = 1.27081;
+  mistagBin[2] = 1.21964;
+  mistagBin[3] = 1.21964;
+  mistagBin[4] = 1.28957;
+  mistagBin[5] = 1.28957;
+  mistagBin[6] = 1.35248;
+
+  mistagBinErr[0] = 0.509119;
+  mistagBinErr_c[0] = 0.00538847;
+  mistagBinErr[1] = 0.508014;
+  mistagBinErr_c[1] = 0.00467148;
+  mistagBinErr[2] = 0.511618;
+  mistagBinErr_c[2] = 0.00455435;
+  mistagBinErr[3] = 0.511618;
+  mistagBinErr_c[3] = 0.00455435;
+  mistagBinErr[4] = 0.557274;
+  mistagBinErr_c[4] = 0.00538131;
+  mistagBinErr[5] = 0.557274;
+  mistagBinErr_c[5] = 0.00538131;
+  mistagBinErr[6] = 0.664784;
+  mistagBinErr_c[6] = 0.122474;
+}
+// c_fraction: 0.0522282 l_fraction 0.947772
+if(tagPoint=="MV2c2085" && channel==2)
+{
+  mistagBin[0] = 1.2298;
+  mistagBin[1] = 1.2675;
+  mistagBin[2] = 1.21624;
+  mistagBin[3] = 1.21624;
+  mistagBin[4] = 1.28633;
+  mistagBin[5] = 1.28633;
+  mistagBin[6] = 1.35248;
+
+  mistagBinErr[0] = 0.504705;
+  mistagBinErr_c[0] = 0.00637696;
+  mistagBinErr[1] = 0.503609;
+  mistagBinErr_c[1] = 0.00563991;
+  mistagBinErr[2] = 0.507182;
+  mistagBinErr_c[2] = 0.00547607;
+  mistagBinErr[3] = 0.507182;
+  mistagBinErr_c[3] = 0.00547607;
+  mistagBinErr[4] = 0.552442;
+  mistagBinErr_c[4] = 0.00641394;
+  mistagBinErr[5] = 0.552442;
+  mistagBinErr_c[5] = 0.00641394;
+  mistagBinErr[6] = 0.664784;
+  mistagBinErr_c[6] = 0.122806;
+}
+// c_fraction: 0.0556068 l_fraction 0.944393
+if(tagPoint=="MV2c2085" && channel==3)
+{
+  mistagBin[0] = 1.22893;
+  mistagBin[1] = 1.26621;
+  mistagBin[2] = 1.21497;
+  mistagBin[3] = 1.21497;
+  mistagBin[4] = 1.2851;
+  mistagBin[5] = 1.2851;
+  mistagBin[6] = 1.35248;
+
+  mistagBinErr[0] = 0.502905;
+  mistagBinErr_c[0] = 0.00678947;
+  mistagBinErr[1] = 0.501814;
+  mistagBinErr_c[1] = 0.00600475;
+  mistagBinErr[2] = 0.505374;
+  mistagBinErr_c[2] = 0.00583031;
+  mistagBinErr[3] = 0.505374;
+  mistagBinErr_c[3] = 0.00583031;
+  mistagBinErr[4] = 0.550473;
+  mistagBinErr_c[4] = 0.00682884;
+  mistagBinErr[5] = 0.550473;
+  mistagBinErr_c[5] = 0.00682884;
+  mistagBinErr[6] = 0.664784;
+  mistagBinErr_c[6] = 0.122806;
+}
+// c_fraction: 0.0564474 l_fraction 0.943553
+if(tagPoint=="MV2c2070_tracks" && channel==0)
+{
+  mistagBin[0] = 1.28383;
+  mistagBin[1] = 1.59499;
+  mistagBin[2] = 1.41652;
+  mistagBin[3] = 1.389;
+  mistagBin[4] = 1.36666;
+  mistagBin[5] = 1.02252;
+  mistagBin[6] = 1.02252;
+
+  mistagBinErr[0] = 1.14242;
+  mistagBinErr_c[0] = 0.950674;
+  mistagBinErr[1] = 1.16963;
+  mistagBinErr_c[1] = 0.167363;
+  mistagBinErr[2] = 0.974642;
+  mistagBinErr_c[2] = 0.125415;
+  mistagBinErr[3] = 0.941073;
+  mistagBinErr_c[3] = 0.140997;
+  mistagBinErr[4] = 0.988934;
+  mistagBinErr_c[4] = 0.140997;
+  mistagBinErr[5] = 0.74146;
+  mistagBinErr_c[5] = 0.210142;
+  mistagBinErr[6] = 0.74146;
+  mistagBinErr_c[6] = 0.210142;
+}
+// c_fraction: 0.0439384 l_fraction 0.956062
+if(tagPoint=="MV2c2070_tracks" && channel==1)
+{
+  mistagBin[0] = 1.28383;
+  mistagBin[1] = 1.59499;
+  mistagBin[2] = 1.41652;
+  mistagBin[3] = 1.389;
+  mistagBin[4] = 1.36666;
+  mistagBin[5] = 1.02252;
+  mistagBin[6] = 1.02252;
+
+  mistagBinErr[0] = 1.14242;
+  mistagBinErr_c[0] = 0.950674;
+  mistagBinErr[1] = 1.16963;
+  mistagBinErr_c[1] = 0.167363;
+  mistagBinErr[2] = 0.974642;
+  mistagBinErr_c[2] = 0.125415;
+  mistagBinErr[3] = 0.941073;
+  mistagBinErr_c[3] = 0.140997;
+  mistagBinErr[4] = 0.988934;
+  mistagBinErr_c[4] = 0.140997;
+  mistagBinErr[5] = 0.74146;
+  mistagBinErr_c[5] = 0.210142;
+  mistagBinErr[6] = 0.74146;
+  mistagBinErr_c[6] = 0.210142;
+}
+// c_fraction: 0 l_fraction 1
+if(tagPoint=="MV2c2070_tracks" && channel==2)
+{
+  mistagBin[0] = 1.28383;
+  mistagBin[1] = 1.59499;
+  mistagBin[2] = 1.41652;
+  mistagBin[3] = 1.389;
+  mistagBin[4] = 1.36666;
+  mistagBin[5] = 1.02252;
+  mistagBin[6] = 1.02252;
+
+  mistagBinErr[0] = 1.14242;
+  mistagBinErr_c[0] = 0.937215;
+  mistagBinErr[1] = 1.16963;
+  mistagBinErr_c[1] = 0.163281;
+  mistagBinErr[2] = 0.974642;
+  mistagBinErr_c[2] = 0.127881;
+  mistagBinErr[3] = 0.941073;
+  mistagBinErr_c[3] = 0.143474;
+  mistagBinErr[4] = 0.988934;
+  mistagBinErr_c[4] = 0.143474;
+  mistagBinErr[5] = 0.74146;
+  mistagBinErr_c[5] = 0.21119;
+  mistagBinErr[6] = 0.74146;
+  mistagBinErr_c[6] = 0.21119;
+}
+// c_fraction: 0 l_fraction 1
+if(tagPoint=="MV2c2070_tracks" && channel==3)
+{
+  mistagBin[0] = 1.28383;
+  mistagBin[1] = 1.59499;
+  mistagBin[2] = 1.41652;
+  mistagBin[3] = 1.389;
+  mistagBin[4] = 1.36666;
+  mistagBin[5] = 1.02252;
+  mistagBin[6] = 1.02252;
+
+  mistagBinErr[0] = 1.14242;
+  mistagBinErr_c[0] = 0.937215;
+  mistagBinErr[1] = 1.16963;
+  mistagBinErr_c[1] = 0.163281;
+  mistagBinErr[2] = 0.974642;
+  mistagBinErr_c[2] = 0.127881;
+  mistagBinErr[3] = 0.941073;
+  mistagBinErr_c[3] = 0.143474;
+  mistagBinErr[4] = 0.988934;
+  mistagBinErr_c[4] = 0.143474;
+  mistagBinErr[5] = 0.74146;
+  mistagBinErr_c[5] = 0.21119;
+  mistagBinErr[6] = 0.74146;
+  mistagBinErr_c[6] = 0.21119;
+}

@@ -1,9 +1,9 @@
 #!/bin/sh
 
 echo Runnin on host `hostname`
-cd /unix/atlasvhbb/abell/mc15data7/roofitTestPlain/roofitTestPlain6PT/../../scripts;
+cd /unix/atlasvhbb/abell/tmvaTraining/roofitTestPlain6PT/..;
 source setupROOT.sh;
-cd /unix/atlasvhbb/abell/mc15data7/roofitTestPlain/roofitTestPlain6PT
+cd /unix/atlasvhbb/abell/tmvaTraining/roofitTestPlain6PT
 root -b -q runGeneralFit.C\(0,true,false,0,\"MV2c1077\"\)
 root -b -q runGeneralFit.C\(0,false,true,0,\"MV2c1077\"\)
 root -b -q runGeneralFit.C\(1,true,false,0,\"MV2c1077\"\)

@@ -98,7 +98,7 @@ void doGeneralFit(TString tagPoint="MV2c1070",
   
 #include "nbins.icc"
 #include "btagBinning.icc"
-#include "/unix/atlasvhbb/abell/mc15data7/roofitTestPlain/roofitTestPlain6PTFLAT/mistagRates.icc"
+#include "/unix/atlasvhbb/abell/mc15data7/roofitTestPlain/mistagRates.icc"
 #include "tracks.icc"
 
   //INCLUDE FIX COMBINATIONS
@@ -184,6 +184,7 @@ void doGeneralFit(TString tagPoint="MV2c1070",
   RooAbsPdf* totalPDF=buildUpMultiSampleModel(tagPoint,channel,nCombinationsFit,true,optionSample,systematicsToLoad);//nCombinationsFit
 
   cout << " AFTER " << endl;
+  // reached
 
   RooAbsPdf* totalPDFtoy=0;
   if (runToy)
@@ -204,6 +205,7 @@ void doGeneralFit(TString tagPoint="MV2c1070",
   }
 
   //  set->Print("v");
+  cout << "break1" << endl;
 
   RooRealVar* pt1=(RooRealVar*)set->find("pt_0");
   RooRealVar* pt2=(RooRealVar*)set->find("pt_1");
@@ -222,6 +224,8 @@ void doGeneralFit(TString tagPoint="MV2c1070",
   RooRealVar* pTcategoryJet0=(RooRealVar*)set->find("ptcategoryJet0");
   RooRealVar* pTcategoryJet1=(RooRealVar*)set->find("ptcategoryJet1");
   RooRealVar* pTcategoryJet2=(RooRealVar*)set->find("ptcategoryJet2");
+
+  cout << "break2" << endl;
 
   // do onnnnnnnnnly if not calibrating
   double totalExpN=0;
@@ -251,7 +255,7 @@ void doGeneralFit(TString tagPoint="MV2c1070",
   //  condObs.add(*eta1);
   //  condObs.add(*eta2);
 
-
+  cout << "break3" << endl;
 
   if (totalPDF==0) return;
 
@@ -267,8 +271,12 @@ void doGeneralFit(TString tagPoint="MV2c1070",
     parametersToy=(RooArgSet*)totalPDF->getVariables();
   }
 
+  cout << "break4" << endl;
+
   if (optionSample==-1)
   {
+    cout << "break5" << endl;
+
     TString base="results";
     base+="_";
     base+=tagPoint;
@@ -306,7 +314,7 @@ void doGeneralFit(TString tagPoint="MV2c1070",
     TString base3=base;
     base3+="_3.root";
 
-
+    // not reached
     cout << " Loading files: " << base0 << " " << base1 << " " << base2 << endl;
 
     TFile* file0=new TFile(base0);
@@ -404,10 +412,12 @@ void doGeneralFit(TString tagPoint="MV2c1070",
   }
 
 
-
+  cout << "break6" << endl;
 
   if (runToy)
   {
+
+    cout << "break7" << endl;
 
     if (channel<2)
     {
@@ -439,6 +449,8 @@ void doGeneralFit(TString tagPoint="MV2c1070",
       parametersToy->selectByName("coefPT_*")->setAttribAll("Constant", kTRUE);
     }
   }
+
+  cout << "break8" << endl;
 
   if (channel<2)
   {
@@ -484,7 +496,6 @@ void doGeneralFit(TString tagPoint="MV2c1070",
     }
 
 
-
     if (totalPDF->getVariables()->find("coefBWeight_lctau_all_111_pTetabin0_weightbin0")!=0)
     {
 
@@ -517,6 +528,8 @@ void doGeneralFit(TString tagPoint="MV2c1070",
 
 
   //Setting up mistag SFs
+
+  cout << "break9" << endl;
 
 
   {
@@ -1155,11 +1168,15 @@ void doGeneralFit(TString tagPoint="MV2c1070",
 
     dataset->Print("v");
 
+    cout << "breakA" << endl;
+
     RooArgSet* parameters=(RooArgSet*)totalPDF->getVariables();
     parameters->Print("v");
 
+    cout << "breakB" << endl;
+
     RooFitResult* result=totalPDF->fitTo(*dataset,
-					 RooFit::NumCPU(8),
+					 RooFit::NumCPU(2),
 					 RooFit::Save(kTRUE),
 					 RooFit::Hesse(hessian),
 //                                       RooFit::Minos(kTRUE),

@@ -15,8 +15,6 @@ int main(int argc, char * argv[]) {
 
   bool lowpt = ( std::atoi(argv[2]) == 1 );
 
-//  bool tracks = false;
-  bool tracks = false;
   bool useMET = false;
 
   std::cout << "Low pt " << lowpt << std::endl;
@@ -28,14 +26,9 @@ int main(int argc, char * argv[]) {
     TString output_file_pt = (lowpt) ? "_lowpt" : "";
     TString output_file_met = (useMET) ? "_MET" : "";
     TString kFold = (i==0) ? "_even" : "_odd";
-    TString trackstr = (tracks) ? "_tracks" : "";
 
-    TFile* outputFile = TFile::Open( "TMVA"+output_file+output_file_pt+output_file_met+kFold+trackstr+".root", "RECREATE" );
-    TMVA::Factory* factory = new TMVA::Factory("tmvaTest"+output_file+output_file_pt+output_file_met+trackstr+kFold, outputFile, "");
-//  TFile* trainingFile = new TFile("./../../../PGS/outputGeneral_fit_ntuple.mc15_13TeV.410000.DAOD_FTAG2_rescaling_train.root");
-//  TFile* testFile = new TFile("./../../../PGS/outputGeneral_fit_ntuple.mc15_13TeV.410000.DAOD_FTAG2_rescaling_test.root");
-//  TFile* trainingFile = new TFile("./../../../PGS/outputGeneral_fit_all_rescaling_train.root");
-//  TFile* testFile = new TFile("./../../../PGS/outputGeneral_fit_all_rescaling_test.root");
+    TFile* outputFile = TFile::Open( "TMVA"+output_file+output_file_pt+output_file_met+kFold+".root", "RECREATE" );
+    TMVA::Factory* factory = new TMVA::Factory("tmvaTest"+output_file+output_file_pt+output_file_met+kFold, outputFile, "");
 
 
     TString signal = "tree_55";
@@ -52,23 +45,19 @@ int main(int argc, char * argv[]) {
 
     std::vector<std::string> signalFiles;
     signalFiles.push_back("");
-    /*
     signalFiles.push_back("SysMCAtNLO");
     signalFiles.push_back("SysPowhegHerwig");
     signalFiles.push_back("SysttbarRadHi");
     signalFiles.push_back("SysttbarRadLo");
-    */
+
     for(int r=0;r<signalFiles.size();r++){
       int entriesToGet = 30000;
-      if(tracks) sig->Add(("/unix/atlas3/abell/mc15data7/PGS_tracks/outputGeneral_fit_top"+signalFiles.at(r)+"_rescaling.root").c_str());
-      else sig->Add(("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_top"+signalFiles.at(r)+"_rescaling.root").c_str());
-//      sig->Add(("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_top"+signalFiles.at(r)+"_rescaling.root").c_str(), entriesToGet);
-//      std::cout << sig->GetEntries() <<std::endl;
+      sig->Add(("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_top"+signalFiles.at(r)+"_rescaling.root").c_str());
+//      sig->Add(("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_top"+signalFiles.at(r)+"_rescaling.root").c_str());
     }
 //    TFile* inputFileSignal = new TFile("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_top_all_rescaling.root");
-    TFile* inputFile; // = new TFile("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_all_rescaling.root");
-    if(tracks) inputFile = TFile::Open("/unix/atlas3/abell/mc15data7/PGS_tracks/outputGeneral_fit_all_rescaling.root");
-    else inputFile = TFile::Open("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_all_rescaling.root");
+    TFile* inputFile = new TFile("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_all_rescaling.root");
+//    TFile* inputFile = new TFile("/unix/atlasvhbb/abell/mc15data7/PGS/outputGeneral_fit_all_rescaling.root");
 
 // get the TTree objects from the input files
 
@@ -81,6 +70,8 @@ int main(int argc, char * argv[]) {
 
     double sigWeight = 1.0;
     double bkgWeight = 1.0;
+
+    sig->SetupAddresses();
 
 //  factory->AddSpectator("weight", 'F');
 
@@ -117,28 +108,15 @@ int main(int argc, char * argv[]) {
 //  factory->AddVariable("train_met", 'F');
 
     TCut mycut = "";
-    TCut lowpT = (tracks) ? "0.02" : "0.02";
 
-    if(tracks){
-      if(lowpt){
-	mycut = "sub_leading_pt < 0.02  && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-	if(jetnum==3) mycut = "sub_leading_pt < 0.02 || sub_sub_leading_pt < 0.02 && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-      }
-      else {
-	mycut = "sub_leading_pt > 0.02 && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-	if(jetnum==3) mycut = "sub_leading_pt > 0.02 && sub_sub_leading_pt > 0.02  && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-      }
-    }else{
-      if(lowpt){
-	mycut = "sub_leading_pt < 0.03  && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-	if(jetnum==3) mycut = "sub_leading_pt < 0.03 || sub_sub_leading_pt < 0.03 && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-      }
-      else {
-	mycut = "sub_leading_pt > 0.03 && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-	if(jetnum==3) mycut = "sub_leading_pt > 0.03 && sub_sub_leading_pt > 0.03  && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
-      }
+    if(lowpt){
+      mycut = "sub_leading_pt < 0.03  && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
+      if(jetnum==3) mycut = "sub_leading_pt < 0.03 || sub_sub_leading_pt < 0.03 && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
     }
-
+    else {
+      mycut = "sub_leading_pt > 0.03 && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
+      if(jetnum==3) mycut = "sub_leading_pt > 0.03 && sub_sub_leading_pt > 0.03  && (leptontype==0 || (etmiss>60e3 && (mll<80e3 || mll>100e3) && mll>50e3))";
+    }
   
 // Tell the factory how to use the training and testing events
     factory->PrepareTrainingAndTestTree( mycut, "NormMode=None:!V" );

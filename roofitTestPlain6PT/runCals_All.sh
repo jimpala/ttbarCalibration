@@ -29,7 +29,7 @@ while ( test $jobNumber -lt $lastJobNumber); do
 #    echo "unset DISPLAY" >> submitCals/$filename
     echo "echo Runnin on host \`hostname\`" >> submitCals/$filename
 #    echo "cd "$workdir"/../../scripts;cd "$workdir>>submitCals/$filename
-    echo "cd "$workdir"/../../scripts;" >>submitCals/$filename
+    echo "cd "$workdir"/..;" >>submitCals/$filename
     echo "source setupROOT.sh;">>submitCals/$filename
     echo "cd "$workdir>>submitCals/$filename
 #    echo "cd "$workdir>>submitCals/$filename

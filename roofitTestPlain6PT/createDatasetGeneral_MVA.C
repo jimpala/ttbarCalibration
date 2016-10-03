@@ -61,12 +61,13 @@ void createDatasetGeneral(TString tagPoint, int channel=0,int combinations=2, bo
   reader->AddVariable("delta_phi", &delta_phi);
   reader->AddVariable("delta_r", &delta_r);
   reader->AddVariable("mlj", &mlj);
-//  reader->AddVariable("minl1j", &minl2j);
-//  reader->AddVariable("minl2j", &minl2j);
+  reader->AddVariable("minl1j", &minl2j);
+  reader->AddVariable("minl2j", &minl2j);
 //  reader->AddVariable("train_met", &train_met);
 //  std::string dir    = "../../scripts/tmvaExamples/train/weights_GOOD/";
-  std::string dir    = "/unix/atlasvhbb/abell/mc15data7/tmvaTraining/train/weights/";
+  std::string dir    = "/unix/atlasvhbb/abell/tmvaTraining/train/weights/";
   std::string prefix = "tmvaTest";
+  std::string suffix = "Overtrain_reference";
   if(channel<=1){
     prefix+="_2jet";
   }
@@ -76,10 +77,10 @@ void createDatasetGeneral(TString tagPoint, int channel=0,int combinations=2, bo
 //  reader->BookMVA("BDT", dir + prefix + "_BDT_Advanced_original.weights.xml");
 //  reader->BookMVA("BDT_lowpt", dir + prefix + "_lowpt_BDT_Advanced.weights.xml");
 
-  reader->BookMVA("BDT_even", dir + prefix + "_even_BDT_Advanced.weights.xml"); //Trained on even events -> apply to odd!!!
-  reader->BookMVA("BDT_lowpt_even", dir + prefix + "_lowpt_even_BDT_Advanced.weights.xml"); //Trained on even events -> apply to odd!!!
-  reader->BookMVA("BDT_odd", dir + prefix + "_odd_BDT_Advanced.weights.xml"); //Trained on off events -> apply to even!!!
-  reader->BookMVA("BDT_lowpt_odd", dir + prefix + "_lowpt_odd_BDT_Advanced.weights.xml"); //Trained on odd events -> apply to even!!!
+  reader->BookMVA("BDT_even", dir + prefix + "_even_BDT_" + suffix + ".weights.xml"); //Trained on even events -> apply to odd!!!
+//  reader->BookMVA("BDT_lowpt_even", dir + prefix + "_lowpt_even_BDT_" + suffix + ".weights.xml"); //Trained on even events -> apply to odd!!!
+  reader->BookMVA("BDT_odd", dir + prefix + "_odd_BDT_" + suffix + ".weights.xml"); //Trained on off events -> apply to even!!!
+//  reader->BookMVA("BDT_lowpt_odd", dir + prefix + "_lowpt_odd_BDT_" + suffix + ".weights.xml"); //Trained on odd events -> apply to even!!!
 
 /*
   reader->BookMVA("BDT_even", dir + prefix + "_even_BDT_Overtrain_reference.weights.xml"); //Trained on even events -> apply to odd!!!
